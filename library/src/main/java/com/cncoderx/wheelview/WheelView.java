@@ -375,8 +375,8 @@ public class WheelView extends View {
 
     public void setEntries(CharSequence... entries) {
         mEntries.clear();
-        if (entries != null && entries.length > 0) {
-            Collections.addAll(mEntries, entries);
+        if (entries != null && entries.size() > 0) {
+            mEntries.addAll(entries);
         }
         mScroller.reset();
         measureItemSize();
