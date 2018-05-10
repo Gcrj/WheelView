@@ -362,6 +362,17 @@ public class WheelView extends View {
         mScroller.setCurrentIndex(index, animated);
     }
 
+    public void setEntries(List<CharSequence> entries) {
+        mEntries.clear();
+        if (entries != null && entries.length > 0) {
+            Collections.addAll(mEntries, entries);
+        }
+        mScroller.reset();
+        measureItemSize();
+        requestLayout();
+        invalidate();
+    }
+
     public void setEntries(CharSequence... entries) {
         mEntries.clear();
         if (entries != null && entries.length > 0) {
